@@ -1,0 +1,65 @@
+# DraGoN-Subs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "saikyou-onmyouji-no-isekai-tenseiki",
+    episode: 1,
+    website: "dragon",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example                         |
+| --------- | ------------------ | ------------------------------- |
+| `anime`   | string             | saikyou-onmyouji-no-isekai-tenseiki |
+| `episode` | integer `/` string | 1                               |
+| `website` | string             | dragon                          |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://i.imgur.com/WaOMCnC.webp",
+  "episode_number": 4,
+  "episode_url": [
+    {
+      "player": "CDA",
+      "url": "https://ebd.cda.pl/620x395/115622840a"
+    },
+    {
+      "player": "GDRIVE",
+      "url": "https://drive.google.com/file/d/14C7Mjc6Q9EsZy6tBRTr3OoEBiL90R8gm/preview"
+    },
+    {
+      "player": "MEGA",
+      "url": "https://mega.nz/embed/m35TDKJJ#-DMNpwNNrsLwwrtGo4Kv2937iZO2BYiaDarmUpLKyXA"
+    }
+  ],
+  "episode_next_url": 5
+}
+```
+
+#### Response `500`
+
+```json
+{
+  "status": 500,
+  "message": "Something went wrong!"
+}
+```
+
+</details>

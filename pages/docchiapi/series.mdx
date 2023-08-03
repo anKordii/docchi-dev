@@ -1,0 +1,223 @@
+# Series Endpoints
+
+---
+
+### Gets detail info about the Series
+
+`GET` ❯ `https://api.docchi.pl/v1/series/find/{SLUG}`
+
+### Parameters
+
+| Parameter | Type   | Example                         |
+| --------- | ------ | ------------------------------- |
+| `SLUG`    | string | nanatsu-no-maken-ga-shihai-suru |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "id": 1439,
+  "mal_id": 50582,
+  "ani_id": null,
+  "adult_content": "false",
+  "title": "Nanatsu no Maken ga Shihai suru",
+  "title_en": "Reign of the Seven Spellblades",
+  "slug": "nanatsu-no-maken-ga-shihai-suru",
+  "description": "In the world of magic, there exist deadly irreversible techniques commonly known as spellblades. These sparse and elusive spells, along with their casters, are shrouded in mystery and only their absolute lethality is known to the masses.\n\nEvery year, the spring blossom signifies a new intake of students to the prestigious magic school Kimberly. With reactions of awe and bewilderment, a ceremonious parade complete with magical beasts welcomes the newcomers to the institution. Among them is the mysterious Oliver Horn, whose indifference changes to fascination as he notices a peculiar figure—a girl wearing strange attire equipped with a Japanese sword.\n\nFrom the entrance ceremony onward, Oliver realizes that not all is as it seems at Kimberly, as the emergence of labyrinths, monsters, and other threats endanger the new student body. Nanatsu no Maken ga Shihai suru explores the intertwined fates of two warriors as they uncover the dark truths that lurk within the walls of the academy. \n\n[Written by MAL Rewrite]",
+  "cover": "https://cdn.myanimelist.net/images/anime/1906/135120l.jpg",
+  "bg": null,
+  "genres": ["Action", "Fantasy"],
+  "broadcast_day": "Saturdays",
+  "aired_from": "2023-07-08T00:00:00+00:00",
+  "episodes": 12,
+  "season": "summer",
+  "season_year": 2023,
+  "series_type": "TV",
+  "ads": null,
+  "modified": null
+}
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found Series ( nanatsu-no-maken-ga-shihai-suru )."
+}
+```
+
+</details>
+
+---
+
+### Gets All Series
+
+`GET` ❯ `https://api.docchi.pl/v1/series/list`
+
+### Parameters
+
+| Parameter | Type    | Example                |
+| --------- | ------- | ---------------------- |
+| `limit`   | integer | 10                     |
+| `before`  | integer | 10                     |
+| `sort`    | string  | `ASC`/`DESC`/`ALFABET` |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "mal_id": 52034,
+    "adult_content": "false",
+    "title": "\"Oshi no Ko\"",
+    "title_en": "My Star",
+    "slug": "oshi-no-ko",
+    "cover": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+    "genres": ["Drama", "Supernatural", "Seinen"],
+    "broadcast_day": "Wednesdays",
+    "aired_from": "2023-04-12T00:00:00+00:00",
+    "episodes": 11,
+    "season": "spring",
+    "season_year": 2023,
+    "series_type": "TV"
+  },
+  {
+    "mal_id": 55791,
+    "adult_content": "false",
+    "title": "\"Oshi no Ko\" 2nd Season",
+    "title_en": "[Oshi No Ko] 2nd Season",
+    "slug": "oshi-no-ko-2nd-season",
+    "cover": "https://cdn.myanimelist.net/images/anime/1477/136727l.jpg",
+    "genres": ["Drama", "Supernatural", "Seinen"],
+    "broadcast_day": null,
+    "aired_from": null,
+    "episodes": null,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "TV"
+  },
+  {
+    "mal_id": 51723,
+    "adult_content": "true",
+    "title": "#Ima made de Ichiban Yokatta Sex The Animation",
+    "title_en": "#Ima made de Ichiban Yokatta Sex The Animation",
+    "slug": "ima-made-de-ichiban-yokatta-sex-the-animation",
+    "cover": "https://cdn.myanimelist.net/images/anime/1713/123417l.jpg",
+    "genres": ["Hentai"],
+    "broadcast_day": null,
+    "aired_from": "2022-06-24T00:00:00+00:00",
+    "episodes": 2,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "OVA"
+  },
+  {
+    "mal_id": 40658,
+    "adult_content": "true",
+    "title": "** Kouhai",
+    "title_en": "Assisted Mating",
+    "slug": "-kouhai",
+    "cover": "https://cdn.myanimelist.net/images/anime/1839/104009l.jpg",
+    "genres": ["Fantasy", "Hentai", "Harem"],
+    "broadcast_day": null,
+    "aired_from": "2020-01-31T00:00:00+00:00",
+    "episodes": 8,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "OVA"
+  }
+]
+```
+
+</details>
+
+---
+
+### Gets the series that match the specified query
+
+`GET` ❯ `https://api.docchi.pl/v1/series/related/{SLUG/MAL_ID}`
+
+### Parameters
+
+| Parameter | Type   | Example                         |
+| --------- | ------ | ------------------------------- |
+| `SLUG`    | string | Nanatsu no Maken ga Shihai suru |
+| `MAL_ID`    | string/integer | 50582 |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[{
+    "mal_id": 50582,
+    "ani_id": null,
+    "title": "Nanatsu no Maken ga Shihai suru",
+    "title_en": "Reign of the Seven Spellblades",
+    "slug": "nanatsu-no-maken-ga-shihai-suru",
+    "cover": "https://cdn.myanimelist.net/images/anime/1906/135120l.jpg",
+    "adult_content": "false",
+    "series_type": "TV",
+    "episodes": 12,
+    "season": "summer",
+    "season_year": 2023
+}]
+```
+
+#### Response `200` (404)
+
+```json
+[]
+```
+
+</details>
+
+---
+
+### Gets the series statistics
+
+`GET` ❯ `https://api.docchi.pl/v1/series/animelist/stats/{SLUG}`
+
+### Parameters
+
+| Parameter | Type   | Example                         |
+| --------- | ------ | ------------------------------- |
+| `SLUG`    | string | Nanatsu no Maken ga Shihai suru |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[{
+        "status": "1",
+        "count": 82
+    },
+    {
+        "status": "2",
+        "count": 1
+    },
+    {
+        "status": "4",
+        "count": 27
+    }
+]
+```
+
+#### Response `404`
+
+```json
+{
+    "message": "Not found Series ( nanatsu-no-maken-ga-shihai-suru )."
+}
+```
+
+</details>

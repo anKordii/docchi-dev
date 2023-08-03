@@ -1,0 +1,210 @@
+# Comments Endpoints
+
+---
+
+### Gets single one comment
+
+`GET` ❯ `https://api.docchi.pl/v1/comments/find/{ID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `ID`      | string/integer | 2185    |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "sender": null,
+  "xid": 69,
+  "location": "kuma-kuma-kuma-bear-punch",
+  "message": "Anonim43, w przypadku napisów należy kontaktowac się bezpośrednio z grupami",
+  "location_type": "anime",
+  "spoiler": "false",
+  "created_at": "2023-06-20T00:06:23.000Z",
+  "avatar": "https://cdn.discordapp.com/avatars/396371018144415757/6a66739786a0bcbc0aaaf7fd34102826.png",
+  "nickname": "Leroy_Itq",
+  "badges": ["moderator", "verified"]
+}
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found comment ( 2185 )."
+}
+```
+
+</details>
+
+---
+
+### Gets list of comments for specific location
+
+`GET` ❯ `https://api.docchi.pl//v1/comments/get/{LOCATION}`
+
+### Parameters
+
+| Parameter  | Type    | Example                         |
+| ---------- | ------- | ------------------------------- |
+| `LOCATION` | string  | nanatsu-no-maken-ga-shihai-suru |
+| `limit`    | integer | 10                              |
+| `before`   | integer | 10                              |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "nickname": "Darko",
+    "avatar": "https://cdn.discordapp.com/avatars/692646809419644980/9460c318de83d8757581ed0d89b3f1fd.png",
+    "badges": ["bughunter"],
+    "id": 2952,
+    "xid": 104,
+    "sender": null,
+    "message": "Azjatycki Harry Potter na lewych sterydach. Może jeszcze pokocham tą serię bo ma potencjał, ale jak dla mnie można by było bez problemu wyciąć parę postaci, dialogi są nieco dziwne, back story obojga głównych postaci wydaje sie mega ciekawe a praktycznie się nim nie gra. Interesują mnie powiązania oliviera ( czarnowłosego). Na razie się dowiedzieliśmy że jego rodzeństwo to jakieś twarde sk#rwysyny z powiązaniami z akademią, jednak nie rozwija się tego wątku puki co. Jestem w stanie zrozumieć tok myślenia głównej bohaterki jednak... Jak dla mnie jest trochę bez sensu. Jakby na siłę dawać mind set \"drogi wojownika\"",
+    "location": "nanatsu-no-maken-ga-shihai-suru",
+    "sub_location": "Odcinek 1",
+    "spoiler": "true",
+    "created_at": "2023-07-30T13:18:12.000Z",
+    "comments_number": null,
+    "emojis": [
+      {
+        "name": null,
+        "count": null
+      }
+    ]
+  },
+  {
+    "nickname": "K6",
+    "avatar": "https://cdn.discordapp.com/avatars/451787672327946255/db91f6963e858942fc763b6681fb1626.png",
+    "badges": [],
+    "id": 2951,
+    "xid": 957,
+    "sender": null,
+    "message": " Po tych 4 odcinkach mam wrażenie że to anime to taki trochę zmarnowany potencjał. Świat jest dobrze pokazany, przez co ma się wrażenie że ma dusze, a świetna muzyka tylko to potęguje. Jednak to wszystko jest niszczone przez, nijakich bohaterów, które są kopiami postaci z innych tworów (patrzę na ciebie męska wersjo Hermiony). Dialogi między postaciami też nie są jakieś wyśmienite. Mimo wszystko jest to dobre anime, które mogło być świetne, ale niestety nie wyszło.",
+    "location": "nanatsu-no-maken-ga-shihai-suru",
+    "sub_location": "Odcinek 4",
+    "spoiler": "false",
+    "created_at": "2023-07-30T11:19:30.000Z",
+    "comments_number": null,
+    "emojis": [
+      {
+        "name": null,
+        "count": null
+      }
+    ]
+  },
+  {
+    "nickname": "docchi",
+    "avatar": "https://pbs.twimg.com/profile_images/1666818991954984960/zaeVDcmK_400x400.jpg",
+    "badges": [],
+    "id": 2950,
+    "xid": 332,
+    "sender": {
+      "nickname": "Anonim9d56",
+      "avatar": "https://storage.docchi.pl/comments/anonim.png"
+    },
+    "message": "Jedno ze słabszych anime tego sezonu 👎",
+    "location": "nanatsu-no-maken-ga-shihai-suru",
+    "sub_location": "Odcinek 4",
+    "spoiler": "false",
+    "created_at": "2023-07-30T09:11:09.000Z",
+    "comments_number": null,
+    "emojis": [
+      {
+        "name": null,
+        "count": null
+      }
+    ]
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found comments for ( nanatsu-no-maken-ga-shihai-suru )."
+}
+```
+
+</details>
+
+---
+
+### Gets list of replys for specific comment
+
+`GET` ❯ `https://api.docchi.pl//v1/comments/replys/{ID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `ID`      | string/integer | 2474    |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "nickname": "Jolo_aka_olo",
+    "avatar": "https://cdn.discordapp.com/avatars/436787853075152899/2fb05fee19d896b4c68910a6f9fde4b9.png",
+    "badges": [],
+    "id": 2477,
+    "xid": 153,
+    "sender": null,
+    "message": "bo tylko taka na razie jest dostępna no chyba że chcesz obejrzeć wersję przeskalowaną w której jakość się zmienia jak w kalejdoskopie to masz ją na shindenie\n",
+    "location": "2474",
+    "sub_location": "Odpowiedź do mother.9",
+    "spoiler": "false",
+    "created_at": "2023-07-08T19:19:44.000Z",
+    "emojis": [
+      {
+        "name": null,
+        "count": null
+      }
+    ]
+  },
+  {
+    "nickname": "Akumiś",
+    "avatar": "https://cdn.discordapp.com/avatars/173989491336282114/a_36644d0c6899658e08f004fb1b6634ea.gif",
+    "badges": [],
+    "id": 2917,
+    "xid": 298,
+    "sender": null,
+    "message": "za mało pioterowi zapłacili XD",
+    "location": "2474",
+    "sub_location": "Odpowiedź do Mother",
+    "spoiler": "false",
+    "created_at": "2023-07-28T17:05:50.000Z",
+    "emojis": [
+      {
+        "name": null,
+        "count": null
+      }
+    ]
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found replys for ( 2474 )."
+}
+```
+
+</details>

@@ -1,0 +1,49 @@
+# KatherineMay
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "dragon-raja",
+    episode: 6,
+    website: "kathsubs",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example     |
+| --------- | ------------------ | ----------- |
+| `anime`   | string             | dragon-raja |
+| `episode` | integer `/` string | 6           |
+| `website` | string             | kathsubs    |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "cda", "url": "https://ebd.cda.pl/620x368/12406023fb" }
+  ],
+  "episode_next_url": 7
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

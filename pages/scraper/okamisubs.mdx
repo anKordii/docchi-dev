@@ -1,0 +1,49 @@
+# Okami-Subs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "arknights-animation-prelude-to-dawn",
+    episode: "3-c77ffb6d-275d-4422-a3f9-a68162dd9a5d",
+    website: "okamisubs",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type   | Example                                |
+| --------- | ------ | -------------------------------------- |
+| `anime`   | string | arknights-animation-prelude-to-dawn    |
+| `episode` | string | 3-c77ffb6d-275d-4422-a3f9-a68162dd9a5d |
+| `website` | string | okamisubs                              |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "CDA", "url": "https://ebd.cda.pl/620x395/1245035768" }
+  ],
+  "episode_next_url": "4-87c4391e-11bc-4689-938f-83818c581a46"
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

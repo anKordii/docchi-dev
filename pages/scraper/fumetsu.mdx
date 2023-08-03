@@ -1,0 +1,57 @@
+# Fumetsu
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "TenseiShitaraKenDeshita",
+    episode: 1,
+    website: "fumetsu",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example                 |
+| --------- | ------------------ | ----------------------- |
+| `anime`   | string             | TenseiShitaraKenDeshita |
+| `episode` | integer `/` string | 1                       |
+| `website` | string             | fumetsu                 |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "cda", "url": "https://ebd.cda.pl/620x368/121608121e" },
+    {
+      "player": "mega",
+      "url": "https://mega.nz/embed/RrxkAZKA!HPYGshW7b2q7VrRP1lco9uo63cRQjIUaVsriGOz32p4"
+    },
+    {
+      "player": "www.mp4upload.com",
+      "url": "https://www.mp4upload.com/embed-19f2r9wqa0i8.html"
+    }
+  ],
+  "episode_next_url": 2
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

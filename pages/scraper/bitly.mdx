@@ -1,0 +1,47 @@
+# Bitly
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    url: "https://bit.ly/masamunes2rcda2",
+    website: "bitly",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type   | Example                        |
+| --------- | ------ | ------------------------------ |
+| `url`     | string | https://bit.ly/masamunes2rcda2 |
+| `website` | string | bitly                          |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "cda", "url": "https://ebd.cda.pl/620x368/151849692e" }
+  ],
+  "episode_next_url": null
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

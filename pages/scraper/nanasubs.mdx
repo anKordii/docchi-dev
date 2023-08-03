@@ -1,0 +1,54 @@
+# NanaSubs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "vinland-saga-season-2",
+    episode: 9,
+    website: "nanasubs",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example               |
+| --------- | ------------------ | --------------------- |
+| `anime`   | string             | vinland-saga-season-2 |
+| `episode` | integer `/` string | 9                     |
+| `website` | string             | nanasubs              |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://nanasubs.com/images/episodes/vinland-saga-season-2-9.webp",
+  "episode_url": [
+    {
+      "player": "gdrive",
+      "url": "https://drive.google.com/file/d/1idnM6DkqAfpnOzDUrW2j6w6xcJ7b-ID-/preview"
+    },
+    { "player": "cda", "url": "https://ebd.cda.pl/620x395/1355687057" }
+  ],
+  "episode_next_url": 10
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

@@ -1,0 +1,112 @@
+# Episodes Endpoints
+
+---
+
+### Gets list of players for episode
+
+`GET` ❯ `https://api.docchi.pl/v1/episodes/find/{SLUG}/{NUMBER}`
+
+### Parameters
+
+| Parameter | Type    | Example                         |
+| --------- | ------- | ------------------------------- |
+| `SLUG`    | string  | nanatsu-no-maken-ga-shihai-suru |
+| `NUMBER`  | integer | 3                               |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "id": 56090,
+    "anime_id": "nanatsu-no-maken-ga-shihai-suru",
+    "anime_episode_number": 3,
+    "bg": null,
+    "player": "https://www.cda.pl/video/1546971324",
+    "player_hosting": "Cda",
+    "created_at": "2023-07-31T18:59:55.000Z",
+    "translator": "true",
+    "translator_title": "TokyoSubs",
+    "translator_url": "https://www.facebook.com/TokyoSubs30"
+  },
+  {
+    "id": 56091,
+    "anime_id": "nanatsu-no-maken-ga-shihai-suru",
+    "anime_episode_number": 3,
+    "bg": null,
+    "player": "https://drive.google.com/file/d/1tvNKiZHyvuOjOcUGoi-odg5dug2tjhbf/view?usp=sharing",
+    "player_hosting": "Gdrive",
+    "created_at": "2023-07-31T18:59:55.000Z",
+    "translator": "true",
+    "translator_title": "TokyoSubs",
+    "translator_url": "https://www.facebook.com/TokyoSubs30"
+  },
+  {
+    "id": 56092,
+    "anime_id": "nanatsu-no-maken-ga-shihai-suru",
+    "anime_episode_number": 3,
+    "bg": null,
+    "player": "https://mega.nz/file/giEiDSCD#NjJYU3XpoDGG00CR4cn1mxyUPIFDJiN7JK3w83GnLPI",
+    "player_hosting": "Mega",
+    "created_at": "2023-07-31T18:59:55.000Z",
+    "translator": "true",
+    "translator_title": "TokyoSubs",
+    "translator_url": "https://www.facebook.com/TokyoSubs30"
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found Episode ( nanatsu-no-maken-ga-shihai-suru )."
+}
+```
+
+</details>
+
+---
+
+### Gets list of how much episodes series contains
+
+`GET` ❯ `https://api.docchi.pl/v1/episodes/count/{SLUG}`
+
+### Parameters
+
+| Parameter | Type   | Example                         |
+| --------- | ------ | ------------------------------- |
+| `SLUG`    | string | nanatsu-no-maken-ga-shihai-suru |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "anime_episode_number": 1,
+    "bg": "https://i.ibb.co/gwY57BH/harry1.png",
+    "created_at": "2023-07-08T14:40:53.000Z"
+  },
+  {
+    "anime_episode_number": 2,
+    "bg": "https://icdn.cda.pl/vid/thumbs/0c3b709d4ee8a982f4c1b9e5112041c8-31.jpg_ooooxooxox_1280x720.jpg",
+    "created_at": "2023-07-15T13:06:20.000Z"
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+    "message": "Not found Episode nanatsu-no-maken-ga-shihai-suru."
+}
+```
+
+</details>

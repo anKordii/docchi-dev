@@ -1,0 +1,85 @@
+# Wbijam
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "narutoboruto",
+    episode: "boruto-275",
+    website: "wbijam",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example      | Information                                              |
+| --------- | ------------------ | ------------ | -------------------------------------------------------- |
+| `anime`   | string             | narutoboruto | Use subdomain e.g. `https://` narutoboruto `.wbijam.pl/` |
+| `episode` | string | boruto-275   |
+| `website` | string             | wbijam       |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://narutoboruto.wbijam.pl/grafika/odcinki/bor/275_01.jpg",
+  "episode_url": [
+    {
+      "player": "mp4up",
+      "url": "https://www.mp4upload.com/embed-0ldopt7zz31c.html"
+    },
+    { "player": "cda", "url": "https://ebd.cda.pl/640x406/1245168997" },
+    {
+      "player": "sibnet",
+      "url": "https://video.sibnet.ru/shell.php?videoid=4950732"
+    },
+    {
+      "player": "mega",
+      "url": "https://mega.nz/embed#!feJ2XDJY!iYUxS93IPJAizaMM5NuZyde5VWqHpDO0-9hbpDVPJVU"
+    }
+  ],
+  "episode_next_url": "boruto-276"
+}
+```
+
+#### Response `204`
+
+Episode page exist but doesn't have players yet.
+
+```json
+{
+  status: 204,
+  message: 'Page loads but doesn't have any players.'
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+#### Response `500 Special`
+
+Episode page probably doesn't exist.
+
+```json
+{
+  "status": 500,
+  "message": "Something went wrong!",
+  "message_extra": "Page loads but doesn't have a header or players."
+}
+```
+
+</details>

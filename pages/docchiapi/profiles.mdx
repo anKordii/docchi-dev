@@ -1,0 +1,264 @@
+# Profiles Endpoints
+
+---
+
+### Gets detail info about the Profile
+
+`GET` ❯ `https://api.docchi.pl/v1/user/profile/{XID/HANDLE}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `XID`     | string/integer | 45      |
+| `HANDLE`  | string         | xan     |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "id": 45,
+  "handle": "xan",
+  "nickname": "xan",
+  "avatar": "https://cdn.discordapp.com/avatars/705529875389218846/a_d912ecb7d747c9abba62a240bdb7a5b7.gif",
+  "translator": "Docchi",
+  "translator_url": "https://docchi.pl",
+  "created_at": "2022-10-05T13:09:44.000Z",
+  "description": "Twitter: https://twitter.com/docchipl\n\nWesprzyj: https://buycoffee.to/docchi",
+  "badges": ["administrator", "moderator", "translator", "wspierajacy"],
+  "mal_profile": "3xanax",
+  "ani_profile": "3xanax",
+  "simkl_profile": "6067305",
+  "bg": "https://i.ibb.co/ySpjN9d/scarlxrd-glitch.gif"
+}
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found Profile ( xan )."
+}
+```
+
+</details>
+
+---
+
+### Gets All Series in list
+
+`GET` ❯ `https://api.docchi.pl/v1/user/list/find/{XID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `XID`     | string/integer | 45      |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "id": 76572,
+    "slug": "tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito",
+    "status": "1",
+    "xid": 45,
+    "episode": 7,
+    "isFavorite": "false",
+    "updated_at": "2023-07-07T20:29:42.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1402/134000l.jpg",
+    "title": "Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito",
+    "title_en": "The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far",
+    "episodes": 12,
+    "adult_content": "false"
+  },
+  {
+    "id": 76601,
+    "slug": "zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto",
+    "status": "1",
+    "xid": 45,
+    "episode": 1,
+    "isFavorite": "false",
+    "updated_at": "2023-07-31T02:10:16.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1384/136408l.jpg",
+    "title": "Zom 100: Zombie ni Naru made ni Shitai 100 no Koto",
+    "title_en": "Zom 100: Bucket List of the Dead",
+    "episodes": 12,
+    "adult_content": "false"
+  },
+  {
+    "id": 76399,
+    "slug": "boku-ga-aishita-subete-no-kimi-e",
+    "status": "1",
+    "xid": 45,
+    "episode": 0,
+    "isFavorite": "false",
+    "updated_at": "2023-04-23T18:17:08.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1145/127594l.jpg",
+    "title": "Boku ga Aishita Subete no Kimi e",
+    "title_en": "To Every You I've Loved Before",
+    "episodes": 1,
+    "adult_content": "false"
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found User ( 45 )."
+}
+```
+
+</details>
+
+---
+
+### Gets List of favorites series
+
+`GET` ❯ `https://api.docchi.pl/v1/user/list/favorites/{XID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `XID`     | string/integer | 45      |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "id": 76383,
+    "slug": "oshi-no-ko",
+    "status": "2",
+    "xid": 45,
+    "episode": 11,
+    "isFavorite": "true",
+    "updated_at": "2023-07-17T20:58:09.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+    "title": "\"Oshi no Ko\"",
+    "title_en": "My Star",
+    "adult_content": "false"
+  },
+  {
+    "id": 76431,
+    "slug": "fuufu-ijou-koibito-miman-50425",
+    "status": "2",
+    "xid": 45,
+    "episode": 12,
+    "isFavorite": "true",
+    "updated_at": "2022-12-29T16:11:21.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1713/126442l.jpg",
+    "title": "Fuufu Ijou, Koibito Miman.",
+    "title_en": "More than a married couple, but not lovers.",
+    "adult_content": "false"
+  },
+  {
+    "id": 76480,
+    "slug": "kimetsu-no-yaiba-katanakaji-no-sato-hen",
+    "status": "2",
+    "xid": 45,
+    "episode": 11,
+    "isFavorite": "true",
+    "updated_at": "2023-06-20T01:00:37.000Z",
+    "cover": "https://cdn.myanimelist.net/images/anime/1297/133915l.jpg",
+    "title": "Kimetsu no Yaiba: Katanakaji no Sato-hen",
+    "title_en": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+    "adult_content": "false"
+  }
+]
+```
+
+#### Response `404`
+
+```json
+{
+  "message": "Not found User ( 45 )."
+}
+```
+
+</details>
+
+---
+
+### Gets profile episodes and series stats
+
+`GET` ❯ `https://api.docchi.pl/v1/user/list/stats/{XID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `XID`     | string/integer | 45      |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "episodes": 1817,
+  "series": 229
+}
+```
+
+#### Response `200` (404)
+
+```json
+{
+  "episodes": null,
+  "series": 0
+}
+```
+
+</details>
+
+---
+
+### Gets profile social stats
+
+`GET` ❯ `https://api.docchi.pl/v1/user/stats/{XID}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `XID`     | string/integer | 45      |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "reviews": 0,
+  "posts": 39,
+  "comments": 274
+}
+```
+
+#### Response `200` (404)
+
+```json
+{
+  "reviews": 0,
+  "posts": 0,
+  "comments": 0
+}
+```
+
+</details>

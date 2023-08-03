@@ -1,0 +1,70 @@
+# Hentai Endpoints
+
+### Gets All Hentais
+
+`GET` ❯ `https://api.docchi.pl/v1/series/hentai`
+
+### Parameters
+
+| Parameter | Type    | Example                |
+| --------- | ------- | ---------------------- |
+| `limit`   | integer | 10                     |
+| `before`  | integer | 10                     |
+| `sort`    | string  | `ASC`/`DESC`/`ALFABET` |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[
+  {
+    "mal_id": 51723,
+    "adult_content": "true",
+    "title": "#Ima made de Ichiban Yokatta Sex The Animation",
+    "title_en": "#Ima made de Ichiban Yokatta Sex The Animation",
+    "slug": "ima-made-de-ichiban-yokatta-sex-the-animation",
+    "cover": "https://cdn.myanimelist.net/images/anime/1713/123417l.jpg",
+    "genres": ["Hentai"],
+    "broadcast_day": null,
+    "aired_from": "2022-06-24T00:00:00+00:00",
+    "episodes": 2,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "OVA"
+  },
+  {
+    "mal_id": 40658,
+    "adult_content": "true",
+    "title": "** Kouhai",
+    "title_en": "Assisted Mating",
+    "slug": "-kouhai",
+    "cover": "https://cdn.myanimelist.net/images/anime/1839/104009l.jpg",
+    "genres": ["Fantasy", "Hentai", "Harem"],
+    "broadcast_day": null,
+    "aired_from": "2020-01-31T00:00:00+00:00",
+    "episodes": 8,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "OVA"
+  },
+  {
+    "mal_id": 719,
+    "adult_content": "true",
+    "title": "Ai no Kusabi",
+    "title_en": "Ai no Kusabi",
+    "slug": "ai-no-kusabi",
+    "cover": "https://cdn.myanimelist.net/images/anime/8/6531l.jpg",
+    "genres": ["Boys Love", "Drama", "Sci-Fi", "Erotica"],
+    "broadcast_day": null,
+    "aired_from": "1992-08-01T00:00:00+00:00",
+    "episodes": 2,
+    "season": "Nieznany",
+    "season_year": 0,
+    "series_type": "OVA"
+  }
+]
+```
+
+</details>

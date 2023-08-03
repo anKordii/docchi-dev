@@ -1,0 +1,69 @@
+# Docchi
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "nanatsu-no-maken-ga-shihai-suru",
+    episode: "1",
+    website: "docchi",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example                         |
+| --------- | ------------------ | ------------------------------- |
+| `anime`   | string             | nanatsu-no-maken-ga-shihai-suru |
+| `episode` | integer `/` string | 1                               |
+| `website` | string             | docchi                          |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": null,
+  "episode_url": [
+    { "player": "cda", "url": "https://ebd.cda.pl/620x395/15167544b4" },
+    {
+      "player": "mega",
+      "url": "https://mega.nz/embed/pFxziChD#3V0hXFFTzVVXXwHm9am_ycuZRhsPdKc9kaqsmptkygI"
+    },
+    { "player": "CDA", "url": "https://www.cda.pl/video/1520329454" },
+    { "player": "CDA", "url": "http://www.cda.pl/video/1515094445" },
+    {
+      "player": "MEGA",
+      "url": "https://mega.nz/embed/FBlDwBTT#22LAumbYpU3zduz01Gz6jqn8v2hgtgdVl9kU0PruqjQ"
+    },
+    {
+      "player": "mega",
+      "url": "https://mega.nz/embed/FBlDwBTT!22LAumbYpU3zduz01Gz6jqn8v2hgtgdVl9kU0PruqjQ"
+    },
+    { "player": "Cda", "url": "https://www.cda.pl/video/151652940f" },
+    {
+      "player": "Mega",
+      "url": "https://mega.nz/file/l39miYCJ#wxHAJy9iAFBISff1PySBQkdtR0laknEm9gVTIIzlbpw"
+    }
+  ],
+  "episode_next_url": 2
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

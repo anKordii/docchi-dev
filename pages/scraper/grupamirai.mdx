@@ -1,0 +1,53 @@
+# Grupa-Mirai
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "blue",
+    episode: 3,
+    website: "grupamirai",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example    |
+| --------- | ------------------ | ---------- |
+| `anime`   | string             | blue       |
+| `episode` | integer `/` string | 3          |
+| `website` | string             | grupamirai |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "CDA", "url": "https://ebd.cda.pl/620x395/1187784851" },
+    {
+      "player": "SIBNET",
+      "url": "https://video.sibnet.ru/shell.php?videoid=4856038"
+    }
+  ],
+  "episode_next_url": 4
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

@@ -1,0 +1,51 @@
+# Paldea
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    episode: "hz001",
+    website: "paldea",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type   | Example |
+| --------- | ------ | ------- |
+| `episode` | string | hz001   |
+| `website` | string | paldea  |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    { "player": "cda", "url": "https://ebd.cda.pl/620x368/14037870fe" },
+    {
+      "player": "gdrive",
+      "url": "https://drive.google.com/file/d/1vOY3issOpAcBmqUB-3u4USAh30mYwIMO/preview"
+    }
+  ],
+  "episode_next_url": "hz002"
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

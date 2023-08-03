@@ -1,0 +1,55 @@
+# Junior-Subs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    folder: "hentai",
+    anime: "yuutousei-ayaka-no-uraomote",
+    episode: "01",
+    website: "junior",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type   | Example                     |
+| --------- | ------ | --------------------------- |
+| `folder`  | string | hentai                      |
+| `anime`   | string | yuutousei-ayaka-no-uraomote |
+| `episode` | string | 01                          |
+| `website` | string | junior                      |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://juniorsubs.pl/wp-content/uploads/2022/11/Screenshot_18.jpg",
+  "episode_url": [
+    {
+      "player": "mega",
+      "url": "https://mega.nz/embed/iNBxwA7Y!rCjfoy417rAKEsfFtV9M2ffw98uVWKAmwLq2ntrEXOI"
+    }
+  ],
+  "episode_next_url": 2
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

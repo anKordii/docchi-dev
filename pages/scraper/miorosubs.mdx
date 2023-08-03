@@ -1,0 +1,54 @@
+# Mioro-Subs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "blue-lock-1",
+    episode: 22,
+    website: "miorosubs",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example     |
+| --------- | ------------------ | ----------- |
+| `anime`   | string             | blue-lock-1 |
+| `episode` | integer `/` string | 22          |
+| `website` | string             | miorosubs   |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://image.tmdb.org/t/p/original/2pEeRMBetN7SpAcFpavnXuV35Y5.jpg",
+  "episode_url": [
+    { "player": "CDA", "url": "https://ebd.cda.pl/620x395/1376408440" },
+    {
+      "player": "MEGA",
+      "url": "https://mega.nz/embed/lLB1WTCZ#IOUBz_NbGGZccGH9Os7nvU_TiTS0sRUTjovsZjNEAvU"
+    }
+  ],
+  "episode_next_url": 23
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

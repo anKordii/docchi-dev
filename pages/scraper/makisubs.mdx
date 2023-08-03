@@ -1,0 +1,50 @@
+# MakiSubs
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    anime: "jitsu-wa-ore-saikyou-deshita-1",
+    episode: 1,
+    website: "maki",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type               | Example                        |
+| --------- | ------------------ | ------------------------------ |
+| `anime`   | string             | jitsu-wa-ore-saikyou-deshita-1 |
+| `episode` | integer `/` string | 1                              |
+| `website` | string             | maki                           |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_thumbnail": "https://image.tmdb.org/t/p/original/6eOEBIKkG4Axp8rRraQDOODafHq.jpg",
+  "episode_url": [
+    { "player": "CDA", "url": "https://ebd.cda.pl/620x395/1507646440" }
+  ],
+  "episode_next_url": 2
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

@@ -1,0 +1,59 @@
+# Track Player
+
+---
+
+### Basic Usage
+
+```javascript
+import Track from "@docchi/track-player";
+
+console.log(
+  await Track({
+    source: "https://video.sibnet.ru/shell.php?videoid=5128164",
+  })
+);
+```
+
+### Supported URL's
+
+- CDA - https://m.cda.pl/video/115890987a
+
+- CDA - https://ebd.cda.pl/620x395/115890987a
+
+- CDA - https://www.cda.pl/video/115890987a
+
+- GOOGLE DRIVE - https://drive.google.com/file/d/0BxZF0Ie-2NRsUjhld2FvYzdsWms/view
+
+- GOOGLE DRIVE - https://drive.google.com/file/d/0BxZF0Ie-2NRsUjhld2FvYzdsWms/preview
+
+- SIBNET - https://video.sibnet.ru/shell.php?videoid=1546878
+
+### Codes
+
+- 501 - Not supported platform.
+
+- 500 - Something went wrong.
+
+- 410 - Source removed by administrators.
+
+- 429 - Too Many Requests.
+
+- 403 - Request access only video.
+
+- 200 - Source exists.
+
+- 206 - Page loaded, but couldn't verify if source exists.
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+{
+  "status": 200,
+  "message": "Source exists"
+}
+```
+
+</details>

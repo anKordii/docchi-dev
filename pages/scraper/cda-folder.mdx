@@ -1,0 +1,117 @@
+# CDA Folder
+
+---
+
+### Basic Usage
+
+```javascript
+import Scraper from "@docchi/scraping-anime-websites-poland";
+
+console.log(
+  await Scraper({
+    user: "SziszoweSubki",
+    folder: 43344342,
+    type: "spaces",
+    spaces: 5,
+    episode: 1,
+    website: "cda",
+  })
+);
+```
+
+### Parameters
+
+| Parameter | Type             | Example  | Information                                                                                                                                            |
+| --------- | ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `user`    | string           | docchi   | ![example](/img/link.png)                                                                                                                              |
+| `folder`  | string`/`integer | 37956235 |                                                                                                                                                        |
+| `type`    | string           | spaces   | You have two types to choose from, one is `spaces` and the other one is `s0e0` which you should use when episode number is presented in S01E01 format. |
+| `spaces`  | string`/`integer | 3        | ![example](/img/spaces.png) If you are using type `s0e0` you also need to determine where the S01E01 format is located.                                |
+| `episode` | string`/`integer | 1        | You have two options to choose from one is to type number e.g. `1, 2 or 12`, or you can just type `all` and you will receive all episodes from folder. |
+| `website` | string           | cda      |                                                                                                                                                        |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200` (Single Episode)
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    {
+      "player": "CDA",
+      "url": "https://www.cda.pl/video/15208574c6",
+      "episode_thumbnail": "//icdn.2cda.pl/vid/thumbs/5e7995c411180cacc9fa612877572b61-4151.jpg_ooooxoooox_1280x720.jpg"
+    }
+  ],
+  "episode_next_url": 2
+}
+```
+
+#### Response `200` (All episodes)
+
+```json
+{
+  "status": 200,
+  "message": "Success",
+  "episode_url": [
+    {
+      "player": "CDA",
+      "episode_number": 1,
+      "url": "https://www.cda.pl/video/15208574c6",
+      "episode_thumbnail": "//icdn.2cda.pl/vid/thumbs/5e7995c411180cacc9fa612877572b61-4151.jpg_ooooxoooox_1280x720.jpg"
+    },
+    {
+      "player": "CDA",
+      "episode_number": 2,
+      "url": "https://www.cda.pl/video/1530544450",
+      "episode_thumbnail": "//icdn.2cda.pl/vid/thumbs/9c5fb1a6dce12f4b8d422acc4513baee-4151.jpg_ooooxoooox_1280x720.jpg"
+    },
+    {
+      "player": "CDA",
+      "episode_number": 3,
+      "url": "https://www.cda.pl/video/154054532d",
+      "episode_thumbnail": "//icdn.2cda.pl/vid/thumbs/7b7663277a81c25096f6824c65a7958d-12451.jpg_ooooxoooox_1280x720.jpg"
+    },
+    {
+      "player": "CDA",
+      "episode_number": 4,
+      "url": "https://www.cda.pl/video/154943156e",
+      "episode_thumbnail": "//icdn.2cda.pl/vid/thumbs/d8afc28a118937139549d2b18636f848-8301.jpg_ooooxoooox_1280x720.jpg"
+    }
+  ],
+  "episode_next_url": NaN
+}
+```
+
+#### Response `204`
+
+Episode is missing.
+
+```json
+{
+  "status": 204,
+  "message": "No Content!"
+}
+```
+
+#### Response `400`
+
+Wrong type of request.
+
+```json
+{
+  "status": 400,
+  "message": "Unknown type of request. Acceptable (spaces, s0e0)"
+}
+```
+
+#### Response `500`
+
+```json
+{ "status": 500, "message": "Something went wrong!" }
+```
+
+</details>

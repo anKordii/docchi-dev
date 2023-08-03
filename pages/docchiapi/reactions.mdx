@@ -1,0 +1,36 @@
+# Reactions Endpoints
+
+---
+
+### Gets reactions for specific location
+
+`GET` ❯ `https://api.docchi.pl/v1/reactions/find/{LOCATION}?type={LOCATION_TYPE}`
+
+### Parameters
+
+| Parameter | Type           | Example |
+| --------- | -------------- | ------- |
+| `LOCATION`      | string/integer | 2185    |
+| `LOCATION_TYPE` | string | `comment`/`episode`/`community` |
+
+<details>
+    <summary>Responses</summary>
+
+#### Response `200`
+
+```json
+[{
+    "name": "like",
+    "count": 1
+}]
+```
+
+#### Response `404`
+
+```json
+{
+    "message": "Not found reactions ( 2185 )."
+}
+```
+
+</details>
